@@ -1,0 +1,3 @@
+SELECT Name FROM Candidate c 
+JOIN ( SELECT TOP 1 CandidateId FROM Vote GROUP BY CandidateId ORDER BY COUNT(CandidateId) DESC) AS v
+ON c.Id=v.CandidateId;
