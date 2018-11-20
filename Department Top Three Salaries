@@ -1,5 +1,5 @@
 SELECT d.Name as Department, e.Name as Employee, e.Salary FROM Employee e
 JOIN Department d ON e.DepartmentId=d.Id
-WHERE (SELECT DISTINCT COUNT(Salary) FROM Employee 
+WHERE (SELECT COUNT(DISTINCT Salary) FROM Employee 
         WHERE Salary>e.Salary And DepartmentId=d.Id)<3
 ORDER BY d.Name, e.Salary DESC;
