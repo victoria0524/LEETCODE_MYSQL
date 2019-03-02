@@ -1,0 +1,2 @@
+SELECT name From Employee
+WHERE Id IN (SELECT ManagerId FROM Employee BY ManagerId HAVING COUNT(ManagerId)>4)
